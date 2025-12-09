@@ -1,0 +1,22 @@
+<page-meta>
+  <navigation-bar title="新页面" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+</page-meta>
+<view class="container">
+  <!-- 背景图片 -->
+  <image class="background-image" src="beijing.jpg" mode="aspectFill"></image>
+
+  <!-- 内容区域 -->
+  <view class="content">
+    <!-- 标题图片 -->
+    <image class="title-image" src="biaoti.png" mode="aspectFit"></image>
+
+    <!-- 图片区域 -->
+    <view class="image-container">
+      <image class="clickable-image" src="1.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="2.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="3.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="4.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="5.png" mode="aspectFit" bindtap="onImageClick" data-src="5.png"></image>
+    </view>
+  </view>
+</view>
