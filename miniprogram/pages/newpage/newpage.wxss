@@ -38,11 +38,11 @@ body, html {
   margin: 0 auto; /* 移除上下 margin，确保水平居中 */
   display: block;
   position: relative;
-  top: -60px; /* 使用更大的负值向上移动标题图片 */
+  top: -120px; /* 使用更大的负值向上移动标题图片 */
 }
 
 .image-container {
-  margin-top: -100px; /* 减小顶部间距，向上移动按钮图片 */
+  margin-top: -150px; /* 减小顶部间距，向上移动按钮图片 */
   width: 80%;
   display: flex;
   flex-direction: column;

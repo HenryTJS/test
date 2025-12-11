@@ -1,6 +1,4 @@
-<page-meta>
-  <navigation-bar title="新页面" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-</page-meta>
+<!-- filepath: e:\test\miniprogram\pages\newpage\newpage.wxml -->
 <view class="container">
   <!-- 背景图片 -->
   <image class="background-image" src="beijing.jpg" mode="aspectFill"></image>
@@ -12,7 +10,7 @@
 
     <!-- 图片区域 -->
     <view class="image-container">
-      <image class="clickable-image" src="1.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="1.png" mode="aspectFit" bindtap="onImageClick" data-src="1.png"></image>
       <image class="clickable-image" src="2.png" mode="aspectFit" bindtap="onImageClick"></image>
       <image class="clickable-image" src="3.png" mode="aspectFit" bindtap="onImageClick"></image>
       <image class="clickable-image" src="4.png" mode="aspectFit" bindtap="onImageClick"></image>

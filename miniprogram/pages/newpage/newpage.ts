@@ -7,9 +7,12 @@ Page({
     // 判断点击的是哪张图片
     const { src } = e.currentTarget.dataset;
     if (src === '5.png') {
-      // 跳转到 pages/index/index 页面
       wx.navigateTo({
         url: '/pages/index/index',
+      });
+    } else if (src === '1.png') {
+      wx.navigateTo({
+        url: '/pages/partone/partone',
       });
     } else {
       wx.showToast({

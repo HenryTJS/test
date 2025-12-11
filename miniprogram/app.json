@@ -1,11 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/newpage/newpage"
+    "pages/newpage/newpage",
+    "pages/partone/partone"
   ],
   "window": {
+    "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationStyle": "default"
   },
   "style": "v2",
   "rendererOptions": {

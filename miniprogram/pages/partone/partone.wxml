@@ -1,0 +1,11 @@
+<!-- filepath: e:\test\miniprogram\pages\partone\partone.wxml -->
+<view class="content">
+  <view class="word-list">
+    <word-item
+      wx:for="{{words}}"
+      wx:key="index"
+      text="{{item.text}}"
+      image="{{item.image}}"
+    ></word-item>
+  </view>
+</view>
