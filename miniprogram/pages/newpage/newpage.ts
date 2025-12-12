@@ -6,11 +6,11 @@ Page({
   onImageClick(e: any) {
     // 判断点击的是哪张图片
     const { src } = e.currentTarget.dataset;
-    if (src === '5.png') {
+    if (src === '/images/5.png') {
       wx.navigateTo({
         url: '/pages/index/index',
       });
-    } else if (src === '1.png') {
+    } else if (src === '/images/1.png') {
       wx.navigateTo({
         url: '/pages/partone/partone',
       });

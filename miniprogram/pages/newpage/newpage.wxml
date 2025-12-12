@@ -1,20 +1,20 @@
 <!-- filepath: e:\test\miniprogram\pages\newpage\newpage.wxml -->
 <view class="container">
   <!-- 背景图片 -->
-  <image class="background-image" src="beijing.jpg" mode="aspectFill"></image>
+  <image class="background-image" src="/images/beijing.jpg" mode="aspectFill"></image>
 
   <!-- 内容区域 -->
   <view class="content">
     <!-- 标题图片 -->
-    <image class="title-image" src="biaoti.png" mode="aspectFit"></image>
+    <image class="title-image" src="/images/biaoti.png" mode="aspectFit"></image>
 
     <!-- 图片区域 -->
     <view class="image-container">
-      <image class="clickable-image" src="1.png" mode="aspectFit" bindtap="onImageClick" data-src="1.png"></image>
-      <image class="clickable-image" src="2.png" mode="aspectFit" bindtap="onImageClick"></image>
-      <image class="clickable-image" src="3.png" mode="aspectFit" bindtap="onImageClick"></image>
-      <image class="clickable-image" src="4.png" mode="aspectFit" bindtap="onImageClick"></image>
-      <image class="clickable-image" src="5.png" mode="aspectFit" bindtap="onImageClick" data-src="5.png"></image>
+      <image class="clickable-image" src="/images/1.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/1.png"></image>
+      <image class="clickable-image" src="/images/2.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="/images/3.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="/images/4.png" mode="aspectFit" bindtap="onImageClick"></image>
+      <image class="clickable-image" src="/images/5.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/5.png"></image>
     </view>
   </view>
 </view>

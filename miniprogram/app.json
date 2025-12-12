@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/newpage/newpage",
-    "pages/partone/partone"
+    "pages/partone/partone",
+    "pages/worddetail/worddetail"
   ],
   "window": {
     "navigationBarTitleText": "WeChat",

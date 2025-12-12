@@ -1,11 +1,16 @@
 <!-- filepath: e:\test\miniprogram\pages\partone\partone.wxml -->
+<view class="search-bar">
+  <input class="search-input" placeholder="请输入单字搜索" bindinput="onSearchInput" />
+</view>
 <view class="content">
+  <image class="background-image" src="/images/beijing1.jpg" mode="aspectFill"></image>
   <view class="word-list">
     <word-item
-      wx:for="{{words}}"
+      wx:for="{{filteredWords}}"
       wx:key="index"
       text="{{item.text}}"
       image="{{item.image}}"
+      detail="{{item.detail}}"
     ></word-item>
   </view>
 </view>
