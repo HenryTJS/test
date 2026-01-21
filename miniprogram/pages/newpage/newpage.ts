@@ -3,14 +3,33 @@ Page({
   onLoad() {
     console.log('新页面加载完成');
   },
+  viewDictionary() {
+    wx.navigateTo({
+      url: '/pages/partone/partone',
+    });
+  },
+  viewMap() {
+    wx.navigateTo({
+      url: '/pages/newpage/newpage',
+    });
+  },
+  downloadResources() {
+    wx.showToast({
+      title: '下载功能暂未开通',
+      icon: 'none',
+    });
+  },
+  openStore() {
+    wx.showToast({
+      title: '商城功能暂未开通',
+      icon: 'none',
+    });
+  },
   onImageClick(e: any) {
     // 判断点击的是哪张图片
     const { src } = e.currentTarget.dataset;
-    if (src === '/images/5.png') {
-      wx.navigateTo({
-        url: '/pages/index/index',
-      });
-    } else if (src === '/images/1.png') {
+    console.log('点击的图片路径:', src); // 添加调试日志
+    if (src === '/images/1.png') {
       wx.navigateTo({
         url: '/pages/partone/partone',
       });

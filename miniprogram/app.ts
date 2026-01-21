@@ -1,6 +1,9 @@
 // app.ts
 App<IAppOption>({
-  globalData: {},
+  globalData: {
+    userInfo: null,
+    isLoggedIn: false,
+  },
   onLaunch() {
     wx.login({
       success: res => {
@@ -10,3 +13,10 @@ App<IAppOption>({
     })
   },
 })
+
+interface IAppOption {
+  globalData: {
+    userInfo: WechatMiniprogram.UserInfo | null;
+    isLoggedIn: boolean;
+  };
+}

@@ -1,20 +1,30 @@
-<!-- filepath: e:\test\miniprogram\pages\newpage\newpage.wxml -->
+<!--newpage.wxml-->
 <view class="container">
-  <!-- 背景图片 -->
   <image class="background-image" src="/images/beijing.jpg" mode="aspectFill"></image>
 
   <!-- 内容区域 -->
   <view class="content">
-    <!-- 标题图片 -->
-    <image class="title-image" src="/images/biaoti.png" mode="aspectFit"></image>
+    <!-- 顶部图片 -->
+    <image class="top-image" src="/images/5.jpg" mode="aspectFit"></image>
 
     <!-- 图片区域 -->
-    <view class="image-container">
-      <image class="clickable-image" src="/images/1.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/1.png"></image>
-      <image class="clickable-image" src="/images/2.png" mode="aspectFit" bindtap="onImageClick"></image>
-      <image class="clickable-image" src="/images/3.png" mode="aspectFit" bindtap="onImageClick"></image>
-      <image class="clickable-image" src="/images/4.png" mode="aspectFit" bindtap="onImageClick"></image>
-      <image class="clickable-image" src="/images/5.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/5.png"></image>
+    <view class="image-grid">
+      <view class="grid-item">
+        <image class="grid-image" src="/images/1.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/1.png"></image>
+        <text class="grid-label">互动字典</text>
+      </view>
+      <view class="grid-item">
+        <image class="grid-image" src="/images/2.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/2.png"></image>
+        <text class="grid-label">古今穿越地图</text>
+      </view>
+      <view class="grid-item">
+        <image class="grid-image" src="/images/3.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/3.png"></image>
+        <text class="grid-label">IP资源下载</text>
+      </view>
+      <view class="grid-item">
+        <image class="grid-image" src="/images/4.png" mode="aspectFit" bindtap="onImageClick" data-src="/images/4.png"></image>
+        <text class="grid-label">文创商城</text>
+      </view>
     </view>
   </view>
 </view>

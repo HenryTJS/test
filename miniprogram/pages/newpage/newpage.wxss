@@ -28,38 +28,58 @@ body, html {
   align-items: center;
   width: 100%;
   height: 100vh;
-  padding: 20px 20px; /* 重新设置上下间距 */
-  padding-top: 0px; /* 减小顶部间距，向上移动标题图片 */
+  padding: 20px;
+  padding-top: 0px;
   box-sizing: border-box;
 }
 
-.title-image {
-  width: 80%;
-  margin: 0 auto; /* 移除上下 margin，确保水平居中 */
-  display: block;
+.top-image {
+  width: 100%;
+  margin-bottom: -70px;
   position: relative;
-  top: -120px; /* 使用更大的负值向上移动标题图片 */
+  top: -100px;
 }
 
-.image-container {
-  margin-top: -150px; /* 减小顶部间距，向上移动按钮图片 */
-  width: 80%;
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* 减小间距以适应放大图片 */
+  width: 95%; /* 增加宽度以容纳放大图片 */
+  max-width: 500px; /* 增加最大宽度限制 */
+  margin: 0 auto;
+  margin-top: -10px; /* 上移网格 */
+}
+
+/* 修改 grid-item 样式 */
+.grid-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0px; /* 确保图片之间没有间隔 */
-  padding: 0; /* 移除所有内边距 */
+  justify-content: center;
+  padding: 8px;
 }
 
-.clickable-image {
-  width: 70%;
-  max-width: 300px;
-  height: 100px;
+/* 修改 grid-image 样式 */
+.grid-image {
+  width: 140px; /* 增大图片尺寸 */
+  height: 140px; /* 增大图片尺寸 */
   object-fit: contain;
-  margin: 0;
   transition: transform 0.2s;
+  border: none;
+  min-height: 0;
 }
 
-.clickable-image:active {
-  transform: scale(0.9);
+.grid-image:active {
+  transform: scale(0.9); /* 确保点击效果正常 */
+}
+
+/* 修改 grid-label 样式 */
+.grid-label {
+  margin-top: 8px;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  word-break: break-all;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: bold;
 }

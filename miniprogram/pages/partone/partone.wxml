@@ -1,16 +1,37 @@
-<!-- filepath: e:\test\miniprogram\pages\partone\partone.wxml -->
-<view class="search-bar">
-  <input class="search-input" placeholder="请输入单字搜索" bindinput="onSearchInput" />
-</view>
+<!--partone.wxml-->
 <view class="content">
+  <!-- 搜索框 -->
+  <view class="search-container">
+    <input class="search-input" placeholder="请输入单字" bindinput="onSearchInput" />
+    <button class="search-button" bindtap="onSearchTap">搜索</button>
+  </view>
+
   <image class="background-image" src="/images/beijing1.jpg" mode="aspectFill"></image>
-  <view class="word-list">
-    <word-item
-      wx:for="{{filteredWords}}"
-      wx:key="index"
-      text="{{item.text}}"
-      image="{{item.image}}"
-      detail="{{item.detail}}"
-    ></word-item>
+  
+  <!-- 单词列表容器 -->
+  <view class="word-list-container">
+    <image class="container-bg" src="/images/word.png" mode="aspectFill"></image>
+    <view class="word-list">
+      <view
+        wx:for="{{currentBatch}}"
+        wx:key="index"
+        class="word-item"
+        bindtap="onWordTap"
+        data-detail="{{item.detail}}"
+        data-text="{{item.text}}"
+      >
+        <image
+          class="word-image"
+          src="{{item.image}}"
+          mode="aspectFit"
+        ></image>
+        <text class="word-text">{{item.text}}</text>
+      </view>
+    </view>
+    
+    <!-- 换一批标记 -->
+    <view class="batch-control-container">
+      <text class="change-batch-text" bindtap="changeBatch">换一批 ↔</text>
+    </view>
   </view>
 </view>

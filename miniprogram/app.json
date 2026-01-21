@@ -1,10 +1,27 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/newpage/newpage",
+    "pages/index/index",
+    "pages/mine/mine",
     "pages/partone/partone",
     "pages/worddetail/worddetail"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/newpage/newpage",
+        "text": "首页",
+        "iconPath": "images/home-icon.png",
+        "selectedIconPath": "images/home-icon-selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/my-icon.png",
+        "selectedIconPath": "images/my-icon-selected.png"
+      }
+    ]
+  },
   "window": {
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",

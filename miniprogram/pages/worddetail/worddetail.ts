@@ -11,10 +11,12 @@ Page({
         });
       }
       if (options.text) {
+        const decodedText = decodeURIComponent(options.text);
         this.setData({
-          text: options.text });
+          text: decodedText
+        });
         wx.setNavigationBarTitle({
-          title: decodeURIComponent(options.text)
+          title: decodedText
         });
       }
     }

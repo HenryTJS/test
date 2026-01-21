@@ -1,0 +1,13 @@
+<!--mine.wxml-->
+<page-meta>
+  <navigation-bar title="我的" />
+</page-meta>
+<view class="container">
+  <view class="profile">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="options">
+    <button class="option-button" bindtap="viewFavorites">我的收藏</button>
+  </view>
+</view>

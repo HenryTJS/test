@@ -14,12 +14,6 @@ Component({
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
   },
   methods: {
-    // 事件处理函数
-    bindViewTap() {
-      wx.navigateTo({
-        url: '../logs/logs',
-      })
-    },
     onChooseAvatar(e: any) {
       if (e.detail && e.detail.avatarUrl) {
         const { avatarUrl } = e.detail;
@@ -27,7 +21,6 @@ Component({
           "userInfo.avatarUrl": avatarUrl,
         });
       } else {
-        // 用户取消选择头像时的处理逻辑
         wx.showToast({
           title: '取消选择头像',
           icon: 'none',
@@ -35,38 +28,46 @@ Component({
       }
     },
     onInputChange(e: any) {
-      const nickName = e.detail.value
-      const { avatarUrl } = this.data.userInfo
+      const nickName = e.detail.value;
+      const { avatarUrl } = this.data.userInfo;
       this.setData({
         "userInfo.nickName": nickName,
         hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
-      })
-    },
-    getUserProfile() {
-      // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-      wx.getUserProfile({
-        desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-        success: (res) => {
-          console.log(res)
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    },
-    goToNewPage() {
-      const { nickName, avatarUrl } = this.data.userInfo;
-      if (!nickName || !avatarUrl || avatarUrl === defaultAvatarUrl) {
-        wx.showToast({
-          title: '请先选择昵称和头像',
-          icon: 'none',
-        });
-        return;
-      }
-      wx.navigateTo({
-        url: '../newpage/newpage', // 跳转到新页面
       });
     },
+    getUserProfile() {
+      wx.getUserProfile({
+        desc: '展示用户信息',
+        success: (res) => {
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true,
+          });
+        },
+      });
+    },
+    navigateToMyPage() {
+      if (this.data.hasUserInfo) {
+        const app = getApp<IAppOption>();
+        app.globalData.userInfo = {
+          ...this.data.userInfo,
+          city: '',
+          country: '',
+          gender: 0,
+          language: 'zh_CN',
+          province: '',
+        };
+        app.globalData.isLoggedIn = true;
+
+        wx.navigateTo({
+          url: '/pages/mine/mine',
+        });
+      } else {
+        wx.showToast({
+          title: '请先完成登录',
+          icon: 'none',
+        });
+      }
+    },
   },
-})
+});
