@@ -20,6 +20,12 @@ Component({
         this.setData({
           "userInfo.avatarUrl": avatarUrl,
         });
+      } else if (e.detail && e.detail.errMsg === 'chooseAvatar:fail cancel') {
+        wx.showToast({
+          title: '已取消头像选择',
+          icon: 'none',
+        });
+        return;
       } else {
         wx.showToast({
           title: '取消选择头像',

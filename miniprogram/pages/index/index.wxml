@@ -1,5 +1,6 @@
-<!--index.wxml-->
-<navigation-bar title="我的" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<page-meta>
+  <navigation-bar title="我的" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+</page-meta>
 <scroll-view class="scrollarea" scroll-y enable-flex="true">
   <view class="container">
     <view class="userinfo">
@@ -21,6 +22,6 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
-    <button class="navigate-button" bindtap="navigateToMyPage" wx:if="{{hasUserInfo}}">进入我的页面</button>
+    <button class="navigate-button" bindtap="getUserProfile" wx:else>请先登录</button>
   </view>
 </scroll-view>
