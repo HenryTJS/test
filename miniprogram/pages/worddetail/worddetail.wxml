@@ -1,3 +1,4 @@
 <view class="container">
   <image class="detail-image" src="{{image}}" mode="widthFix" show-menu-by-longpress="true" />
+  <button class="favorite-button" bindtap="addToFavorites">收藏</button>
 </view>

@@ -1,7 +1,28 @@
+import oracle from '../../utils/oracle';
+
 Page({
-  data: {},
+  data: {
+    oracleDetail: {
+      question: '',
+      answer: ''
+    },
+  },
   onLoad() {
     console.log('新页面加载完成');
+
+    // 计算卜辞编号
+    const baseDate = new Date(2025, 11, 21); // 2025年12月21日
+    const currentDate = new Date();
+    const diffDays = Math.floor((currentDate.getTime() - baseDate.getTime()) / (1000 * 60 * 60 * 24));
+    const oracleIndex = diffDays % oracle.length;
+
+    // 设置卜辞内容
+    this.setData({
+      oracleDetail: {
+        question: oracle[oracleIndex].question,
+        answer: oracle[oracleIndex].answer,
+      },
+    });
   },
   viewDictionary() {
     wx.navigateTo({

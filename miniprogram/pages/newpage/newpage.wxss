@@ -1,7 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* 防止水平滚动条 */
+  overflow-x: hidden;
 }
 
 .container {
@@ -35,22 +35,52 @@ body, html {
 
 .top-image {
   width: 100%;
-  margin-bottom: -70px;
   position: relative;
+  left: 50%; /* 将图片的左边界移动到屏幕中心 */
+  transform: translateX(-50%); /* 通过平移使图片居中 */
+  margin-bottom: -70px;
   top: -100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* 确保图片居中 */
+}
+
+.oracle-title-image {
+  position: relative;
+  top: -680rpx;
+  left: -20%;
+  width: 40%;
+  z-index: 2;
+}
+
+.oracle-question {
+  z-index: 3;
+  font-size: 48rpx;
+  font-weight: 700;
+  font-family: 'KaiTi', '楷体', serif;
+  margin-bottom: 10rpx;
+  text-align: center;
+  margin-top: -700rpx;
+}
+
+.oracle-answer {
+  z-index: 3;
+  font-size: 48rpx;
+  font-weight: 700;
+  font-family: 'KaiTi', '楷体', serif;
+  text-align: center;
+  margin-top: 10rpx;
 }
 
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px; /* 减小间距以适应放大图片 */
-  width: 95%; /* 增加宽度以容纳放大图片 */
-  max-width: 500px; /* 增加最大宽度限制 */
-  margin: 0 auto;
-  margin-top: -10px; /* 上移网格 */
+  gap: 10px;
+  width: 95%;
+  max-width: 500px;
+  margin: 50px auto 0;
 }
 
-/* 修改 grid-item 样式 */
 .grid-item {
   display: flex;
   flex-direction: column;
@@ -59,10 +89,9 @@ body, html {
   padding: 8px;
 }
 
-/* 修改 grid-image 样式 */
 .grid-image {
-  width: 140px; /* 增大图片尺寸 */
-  height: 140px; /* 增大图片尺寸 */
+  width: 140px;
+  height: 140px;
   object-fit: contain;
   transition: transform 0.2s;
   border: none;
@@ -70,10 +99,9 @@ body, html {
 }
 
 .grid-image:active {
-  transform: scale(0.9); /* 确保点击效果正常 */
+  transform: scale(0.9);
 }
 
-/* 修改 grid-label 样式 */
 .grid-label {
   margin-top: 8px;
   font-size: 20px;

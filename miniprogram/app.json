@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/partone/partone",
-    "pages/worddetail/worddetail"
+    "pages/worddetail/worddetail",
+    "pages/favorites/favorites"
   ],
   "tabBar": {
     "list": [

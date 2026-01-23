@@ -22,6 +22,9 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
-    <button class="navigate-button" bindtap="getUserProfile" wx:else>请先登录</button>
+    <block wx:if="{{hasUserInfo}}">
+        <button class="navigate-button" bindtap="navigateToMyPage">进入我的页面</button>
+      </block>
+      <button class="navigate-button" bindtap="getUserProfile" wx:else>请先登录</button>
   </view>
 </scroll-view>

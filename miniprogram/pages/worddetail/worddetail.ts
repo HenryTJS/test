@@ -20,5 +20,17 @@ Page({
         });
       }
     }
+  },
+  addToFavorites() {
+    const app = getApp();
+    const { image, text } = this.data;
+    if (!app.globalData.favorites) {
+      app.globalData.favorites = [];
+    }
+    app.globalData.favorites.push({ image, text });
+    wx.showToast({
+      title: '已添加到收藏',
+      icon: 'success'
+    });
   }
 });

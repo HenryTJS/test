@@ -22,9 +22,17 @@ Page({
     });
   },
   viewFavorites() {
-    wx.showToast({
-      title: '我的收藏功能暂未开通',
-      icon: 'none',
+    const app = getApp();
+    const favorites = app.globalData.favorites || [];
+    if (favorites.length === 0) {
+      wx.showToast({
+        title: '暂无收藏内容',
+        icon: 'none',
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/favorites/favorites',
     });
   },
   viewDictionary() {
