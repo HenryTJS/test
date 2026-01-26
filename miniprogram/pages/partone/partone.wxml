@@ -7,31 +7,22 @@
   </view>
 
   <image class="background-image" src="/images/beijing1.jpg" mode="aspectFill"></image>
-  
-  <!-- 单词列表容器 -->
-  <view class="word-list-container">
-    <image class="container-bg" src="/images/word.png" mode="aspectFill"></image>
-    <view class="word-list">
-      <view
-        wx:for="{{currentBatch}}"
-        wx:key="index"
-        class="word-item"
-        bindtap="onWordTap"
-        data-detail="{{item.detail}}"
-        data-text="{{item.text}}"
-      >
-        <image
-          class="word-image"
-          src="{{item.image}}"
-          mode="aspectFit"
-        ></image>
-        <text class="word-text">{{item.text}}</text>
-      </view>
-    </view>
-    
-    <!-- 换一批标记 -->
-    <view class="batch-control-container">
-      <text class="change-batch-text" bindtap="changeBatch">换一批 ↔</text>
+
+  <view class="word-list" style="gap: {{gapPx}}px;">
+    <view
+      wx:for="{{currentBatch}}"
+      wx:key="index"
+      class="word-item"
+      bindtap="onWordTap"
+      data-detail="{{item.detail}}"
+      data-text="{{item.text}}"
+    >
+      <image
+        class="word-image"
+        src="{{item.image}}"
+        mode="aspectFill"
+      ></image>
+      <text class="word-text">{{item.text}}</text>
     </view>
   </view>
 </view>

@@ -8,8 +8,10 @@
     <image class="oracle-title-image" src="/images/今日卜辞.png" mode="aspectFit"></image>
 
       <!-- 今日卜辞内容 -->
-    <view class="oracle-question">{{oracleDetail.question}}</view>
-    <view class="oracle-answer">{{oracleDetail.answer}}</view>
+    <view class="oracle-a">{{oracleDetail.a}}</view>
+    <view class="oracle-b">{{oracleDetail.b}}</view>
+    <view class="oracle-c">{{oracleDetail.c}}</view>
+    <view class="oracle-d">{{oracleDetail.d}}</view>
 
     <!-- 图片区域 -->
     <view class="image-grid">

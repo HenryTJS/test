@@ -12,3 +12,15 @@
   height: auto;
   display: block;
 }
+
+.favorite-button {
+  margin-top: 16px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #1aad19; /* 微信绿 */
+  color: #ffffff;
+}
+.favorite-button.favorited {
+  background-color: #cccccc; /* 已收藏状态，灰色区分 */
+  color: #333333;
+}

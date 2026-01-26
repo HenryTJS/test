@@ -3,8 +3,10 @@ import oracle from '../../utils/oracle';
 Page({
   data: {
     oracleDetail: {
-      question: '',
-      answer: ''
+      a: '',
+      b: '',
+      c: '',
+      d: '',
     },
   },
   onLoad() {
@@ -19,8 +21,10 @@ Page({
     // 设置卜辞内容
     this.setData({
       oracleDetail: {
-        question: oracle[oracleIndex].question,
-        answer: oracle[oracleIndex].answer,
+        a: oracle[oracleIndex].a,
+        b: oracle[oracleIndex].b,
+        c: oracle[oracleIndex].c,
+        d: oracle[oracleIndex].d,
       },
     });
   },
