@@ -4,7 +4,6 @@ Page({
   data: {
     image: '',
     text: '',
-    isFavorited: false,
   },
   onLoad(options) {
     const decodedImage = options && options.image ? decodeURIComponent(options.image) : '';
@@ -24,43 +23,5 @@ Page({
     if (decodedText) {
       wx.setNavigationBarTitle({ title: decodedText });
     }
-
-    // 初始化收藏状态（使用已解析的值避免 setData 异步竞态）
-    this.updateFavoriteState(finalImage, decodedText);
   },
-  onShow() {
-    const { image, text } = this.data;
-    this.updateFavoriteState(image, text);
-  },
-  toggleFavorite() {
-    const app = getApp();
-    const { image, text, isFavorited } = this.data;
-    if (!app.globalData.favorites) {
-      app.globalData.favorites = [];
-    }
-    if (!isFavorited) {
-      app.globalData.favorites.push({ image, text });
-      this.setData({ isFavorited: true });
-      try { wx.setStorageSync(`favorites_${app.globalData.userKey}`, app.globalData.favorites); } catch (e) {}
-      wx.showToast({ title: '已添加到收藏', icon: 'success' });
-    } else {
-      const idx = app.globalData.favorites.findIndex(
-        (it) => it.text === text && it.image === image
-      );
-      if (idx > -1) { app.globalData.favorites.splice(idx, 1); }
-      this.setData({ isFavorited: false });
-      try { wx.setStorageSync(`favorites_${app.globalData.userKey}`, app.globalData.favorites); } catch (e) {}
-      wx.showToast({ title: '已取消收藏', icon: 'none' });
-    }
-  },
-  updateFavoriteState(image, text) {
-    const app = getApp();
-    const curImage = image || this.data.image;
-    const curText = text || this.data.text;
-    const list = app.globalData.favorites || [];
-    const exists = list.some(
-      (it) => it.text === curText && it.image === curImage
-    );
-    this.setData({ isFavorited: exists });
-  }
 });

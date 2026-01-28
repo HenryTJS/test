@@ -1,8 +1,0 @@
-<view class="favorites-container">
-  <block wx:for="{{favorites}}" wx:key="index">
-    <view class="favorite-item">
-      <image class="favorite-image" src="{{item.image}}" mode="widthFix" />
-      <text class="favorite-text">{{item.text}}</text>
-    </view>
-  </block>
-</view>

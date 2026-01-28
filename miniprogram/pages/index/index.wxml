@@ -1,6 +1,3 @@
-<page-meta>
-  <navigation-bar title="我的" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-</page-meta>
 <scroll-view class="scrollarea" scroll-y enable-flex="true">
   <view class="container">
     <view class="userinfo">

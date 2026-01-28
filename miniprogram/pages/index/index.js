@@ -53,7 +53,7 @@ Component({
     navigateToMyPage() {
       if (this.data.hasUserInfo) {
         const app = getApp();
-        const { getUserKey } = require('../../utils/util').default;
+        const { getUserKey } = require('../../utils/util');
         app.globalData.userInfo = {
           ...this.data.userInfo,
           city: '',
@@ -63,27 +63,16 @@ Component({
           province: '',
         };
         app.globalData.isLoggedIn = true;
-        // 计算用户键并迁移 guest 收藏
+        // 计算用户键
         const userKey = getUserKey(app.globalData.userInfo, app.globalData.isLoggedIn);
         app.globalData.userKey = userKey;
         try {
-          const guest = wx.getStorageSync('favorites_guest') || [];
-          const userFav = wx.getStorageSync(`favorites_${userKey}`) || [];
-          const mergeMap = {};
-          [...guest, ...userFav].forEach((it) => {
-            mergeMap[`${it.image}|${it.text}`] = it;
-          });
-          const merged = Object.values(mergeMap);
-          wx.setStorageSync(`favorites_${userKey}`, merged);
           wx.setStorageSync('userKey', userKey);
           wx.setStorageSync('userInfo', app.globalData.userInfo);
           wx.setStorageSync('isLoggedIn', true);
-          app.globalData.favorites = merged;
-          // 可选：清理 guest 收藏避免后续混淆
-          // wx.setStorageSync('favorites_guest', []);
         } catch (e) {}
 
-        wx.navigateTo({
+        wx.switchTab({
           url: '/pages/mine/mine',
         });
       } else {

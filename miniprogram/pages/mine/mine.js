@@ -6,11 +6,16 @@ Page({
     },
   },
   onLoad() {
+    // 页面首次加载时的初始化
+  },
+  onShow() {
     const app = getApp();
+    // 检查是否已登录
     if (!app.globalData.isLoggedIn) {
-      wx.redirectTo({
+      wx.navigateTo({
         url: '/pages/index/index',
       });
+      return;
     }
 
     this.setData({
@@ -20,39 +25,27 @@ Page({
       },
     });
   },
-  viewFavorites() {
-    const app = getApp();
-    const favorites = app.globalData.favorites || [];
-    if (favorites.length === 0) {
-      wx.showToast({
-        title: '暂无收藏内容',
-        icon: 'none',
-      });
-      return;
-    }
-    wx.navigateTo({
-      url: '/pages/favorites/favorites',
-    });
-  },
   viewDictionary() {
-    wx.navigateTo({
-      url: '/pages/partone/partone',
+    wx.showToast({
+      title: '功能暂未开通',
+      icon: 'none',
     });
   },
   viewMap() {
-    wx.navigateTo({
-      url: '/pages/newpage/newpage',
+    wx.showToast({
+      title: '功能暂未开通',
+      icon: 'none',
     });
   },
   downloadResources() {
     wx.showToast({
-      title: '下载功能暂未开通',
+      title: '功能暂未开通',
       icon: 'none',
     });
   },
   openStore() {
     wx.showToast({
-      title: '商城功能暂未开通',
+      title: '功能暂未开通',
       icon: 'none',
     });
   },

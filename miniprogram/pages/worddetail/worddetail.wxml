@@ -1,6 +1,3 @@
 <view class="container">
   <image class="detail-image" src="{{image}}" mode="widthFix" show-menu-by-longpress="true" />
-  <button class="favorite-button {{isFavorited ? 'favorited' : ''}}" bindtap="toggleFavorite">
-    {{isFavorited ? '已收藏' : '收藏'}}
-  </button>
 </view>
