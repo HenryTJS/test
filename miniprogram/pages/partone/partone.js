@@ -1,10 +1,9 @@
-// TS文件
-import data from '../../utils/data';
+const data = require('../../utils/data');
 
 Page({
   data: {
-    allWords: [] as { text: string; detail: string; image: string }[],
-    currentBatch: [] as { text: string; detail: string; image: string }[],
+    allWords: [],
+    currentBatch: [],
     currentPage: 1, // 当前页码（从1开始）
     batchSize: 11, // 一次展示全部
     imageCount: 7, // 固定图片数量
@@ -18,18 +17,17 @@ Page({
     const { windowWidth } = wx.getSystemInfoSync();
     const gapPx = windowWidth * 0.04; // 4% 宽度的像素值
 
-    // 处理数据，为每个单词添加图片路径（根据索引循环使用7张图片）
-    const processedData = data.map((item, index) => ({
+    // 处理数据，使用 data 中的 show 图片路径
+    const processedData = data.map((item) => ({
       ...item,
-      // 使用模运算循环使用7张图片: (索引 % 7) + 1 得到 1-7
-      image: `/images/word${(index % this.data.imageCount) + 1}.png`
+      image: item.show // 使用 data 中的 show 字段作为展示图片
     }));
-    
+
     console.log('处理后的数据:', processedData); // 调试用
-    
+
     // 计算总批数 - 正确的逻辑
     const totalData = processedData.length;
-    
+
     // 一次性展示全部
     this.setData({
       allWords: processedData,
@@ -39,7 +37,7 @@ Page({
     });
   },
 
-  onWordTap(event: any) {
+  onWordTap(event) {
     const { detail, text } = event.currentTarget.dataset;
     wx.navigateTo({
       url: `/pages/worddetail/worddetail?image=${encodeURIComponent(detail)}&text=${encodeURIComponent(text)}`
@@ -47,7 +45,7 @@ Page({
   },
 
   // 搜索框输入事件
-  onSearchInput(event: any) {
+  onSearchInput(event) {
     this.setData({
       searchQuery: event.detail.value
     });
@@ -82,14 +80,10 @@ Page({
   },
 
   // 显示指定页码的数据
-  showPage(pageNumber: number) {
+  showPage(pageNumber) {
     // 已改为一次展示全部，这里保持数据一致性
-    const { allWords, imageCount } = this.data;
-    const batch = allWords.map((item, idx) => ({
-      ...item,
-      image: `/images/word${(idx % imageCount) + 1}.png`
-    }));
-    this.setData({ currentBatch: batch, currentPage: 1 });
+    const { allWords } = this.data;
+    this.setData({ currentBatch: allWords, currentPage: 1 });
   },
 
   // 换一批按钮点击事件

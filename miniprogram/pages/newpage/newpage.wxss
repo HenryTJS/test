@@ -55,38 +55,45 @@ body, html {
 
 .oracle-a {
   z-index: 3;
-  font-size: 40rpx;
+  font-size: 50rpx;
   font-weight: 700;
   font-family: 'KaiTi', '楷体', serif;
-  margin-bottom: 10rpx;
-  text-align: center;
-  margin-top: -800rpx;
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 40rpx;
+  margin-top: -840rpx;
 }
 
 .oracle-b {
   z-index: 3;
-  font-size: 40rpx;
+  font-size: 50rpx;
   font-weight: 700;
   font-family: 'KaiTi', '楷体', serif;
-  text-align: center;
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 40rpx;
   margin-top: 10rpx;
 }
 
 .oracle-c {
   z-index: 3;
-  font-size: 40rpx;
+  font-size: 50rpx;
   font-weight: 700;
   font-family: 'KaiTi', '楷体', serif;
-  text-align: center;
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 40rpx;
   margin-top: 10rpx;
 }
 
 .oracle-d {
   z-index: 3;
-  font-size: 40rpx;
+  font-size: 50rpx;
   font-weight: 700;
   font-family: 'KaiTi', '楷体', serif;
-  text-align: center;
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 40rpx;
   margin-top: 10rpx;
 }
 

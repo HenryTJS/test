@@ -1,5 +1,4 @@
-// app.ts
-App<IAppOption>({
+App({
   globalData: {
     userInfo: null,
     isLoggedIn: false,
@@ -24,19 +23,10 @@ App<IAppOption>({
     } catch (e) {}
 
     wx.login({
-      success: res => {
-        console.log(res.code)
+      success: (res) => {
+        console.log(res.code);
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       },
-    })
+    });
   },
-})
-
-interface IAppOption {
-  globalData: {
-    userInfo: WechatMiniprogram.UserInfo | null;
-    isLoggedIn: boolean;
-    favorites: Array<{ image: string; text: string }>;
-    userKey: string;
-  };
-}
+});

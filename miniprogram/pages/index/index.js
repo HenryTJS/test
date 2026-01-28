@@ -1,7 +1,5 @@
-// index.ts
-// 获取应用实例
-const app = getApp<IAppOption>()
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const app = getApp();
+const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0';
 
 Component({
   data: {
@@ -14,11 +12,11 @@ Component({
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
   },
   methods: {
-    onChooseAvatar(e: any) {
+    onChooseAvatar(e) {
       if (e.detail && e.detail.avatarUrl) {
         const { avatarUrl } = e.detail;
         this.setData({
-          "userInfo.avatarUrl": avatarUrl,
+          'userInfo.avatarUrl': avatarUrl,
         });
       } else if (e.detail && e.detail.errMsg === 'chooseAvatar:fail cancel') {
         wx.showToast({
@@ -33,11 +31,11 @@ Component({
         });
       }
     },
-    onInputChange(e: any) {
+    onInputChange(e) {
       const nickName = e.detail.value;
       const { avatarUrl } = this.data.userInfo;
       this.setData({
-        "userInfo.nickName": nickName,
+        'userInfo.nickName': nickName,
         hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
       });
     },
@@ -54,8 +52,8 @@ Component({
     },
     navigateToMyPage() {
       if (this.data.hasUserInfo) {
-        const app = getApp<IAppOption>();
-        const { getUserKey } = require('../../utils/util');
+        const app = getApp();
+        const { getUserKey } = require('../../utils/util').default;
         app.globalData.userInfo = {
           ...this.data.userInfo,
           city: '',
@@ -71,8 +69,8 @@ Component({
         try {
           const guest = wx.getStorageSync('favorites_guest') || [];
           const userFav = wx.getStorageSync(`favorites_${userKey}`) || [];
-          const mergeMap: Record<string, { image: string; text: string }> = {};
-          [...guest, ...userFav].forEach((it: { image: string; text: string }) => {
+          const mergeMap = {};
+          [...guest, ...userFav].forEach((it) => {
             mergeMap[`${it.image}|${it.text}`] = it;
           });
           const merged = Object.values(mergeMap);

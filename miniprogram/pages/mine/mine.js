@@ -1,4 +1,3 @@
-// mine.ts
 Page({
   data: {
     userInfo: {
@@ -7,7 +6,7 @@ Page({
     },
   },
   onLoad() {
-    const app = getApp<IAppOption>();
+    const app = getApp();
     if (!app.globalData.isLoggedIn) {
       wx.redirectTo({
         url: '/pages/index/index',
@@ -16,7 +15,7 @@ Page({
 
     this.setData({
       userInfo: app.globalData.userInfo || {
-        avatarUrl: '/images/default-avatar.png',
+        avatarUrl: '',
         nickName: '未登录用户',
       },
     });

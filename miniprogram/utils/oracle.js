@@ -422,4 +422,4 @@ const oracle = [
   }
 ];
 
-export default oracle;
+module.exports = oracle;

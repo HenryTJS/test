@@ -1,4 +1,4 @@
-import oracle from '../../utils/oracle';
+const oracle = require('../../utils/oracle');
 
 Page({
   data: {
@@ -50,7 +50,7 @@ Page({
       icon: 'none',
     });
   },
-  onImageClick(e: any) {
+  onImageClick(e) {
     // 判断点击的是哪张图片
     const { src } = e.currentTarget.dataset;
     console.log('点击的图片路径:', src); // 添加调试日志

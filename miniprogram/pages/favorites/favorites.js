@@ -7,10 +7,10 @@ Page({
     this.setData({
       favorites: app.globalData.favorites || []
     });
-  }
-  ,onShow() {
+  },
+  onShow() {
     // 进入页面时刷新一次，确保展示当前用户的收藏
-    const app = getApp<IAppOption>();
+    const app = getApp();
     try {
       const list = wx.getStorageSync(`favorites_${app.globalData.userKey}`) || [];
       this.setData({ favorites: list });
