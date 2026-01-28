@@ -12,7 +12,6 @@
   height: auto;
   display: block;
 }
-
 .favorite-button {
   margin-top: 16px;
   padding: 12px 20px;
