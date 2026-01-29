@@ -1,0 +1,3 @@
+<view class="content">
+  <image class="background-image" src="/images/beijing2.jpg" mode="aspectFill"></image>
+</view>

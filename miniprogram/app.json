@@ -4,6 +4,7 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/partone/partone",
+    "pages/parttwo/parttwo",
     "pages/worddetail/worddetail"
   ],
   "tabBar": {

@@ -58,11 +58,19 @@ Page({
       wx.navigateTo({
         url: '/pages/partone/partone',
       });
-    } else {
-      wx.showToast({
-        title: '该功能暂未开通',
-        icon: 'none',
-      });
+      return;
     }
+
+    if (src === '/images/2.png') {
+      wx.navigateTo({
+        url: '/pages/parttwo/parttwo',
+      });
+      return;
+    }
+
+    wx.showToast({
+      title: '该功能暂未开通',
+      icon: 'none',
+    });
   },
 });

@@ -62,6 +62,7 @@ body, html {
   align-self: flex-start;
   margin-left: 40rpx;
   margin-top: -840rpx;
+  color: #d2691e;
 }
 
 .oracle-b {
@@ -73,6 +74,7 @@ body, html {
   align-self: flex-start;
   margin-left: 40rpx;
   margin-top: 10rpx;
+  color: #d2691e;
 }
 
 .oracle-c {
@@ -84,6 +86,7 @@ body, html {
   align-self: flex-start;
   margin-left: 40rpx;
   margin-top: 10rpx;
+  color: #d2691e;
 }
 
 .oracle-d {
@@ -95,6 +98,7 @@ body, html {
   align-self: flex-start;
   margin-left: 40rpx;
   margin-top: 10rpx;
+  color: #d2691e;
 }
 
 .image-grid {
